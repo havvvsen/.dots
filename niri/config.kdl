@@ -285,7 +285,6 @@ binds {
     Alt+A { spawn "fuzzel"; }
     Alt+Space { spawn "vicinae" "toggle"; }
     Super+Shift+P { spawn "frbw" "show"; }
-    Super+X { spawn "hyprpicker" "-a"; }
 
     Super+Ctrl+W { spawn "waypaper"; }
     Super+Period { spawn "~/.config/niri/scripts/emoji.sh"; }
