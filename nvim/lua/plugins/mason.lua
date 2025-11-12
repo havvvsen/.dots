@@ -35,6 +35,7 @@ return {
 			"asm_lsp",
 			"jsonls",
 			"taplo", -- toml lsp
+			"gopls",
 			-- "rust_analyzer"
 		},
 		automatic_enable = {
@@ -46,6 +47,7 @@ return {
 			"tailwindcss",
 			"jsonls",
 			"taplo",
+			"gopls",
 			exclude = {},
 		},
 	},
