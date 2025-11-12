@@ -29,6 +29,7 @@ return { -- Autoformat
 			end
 		end,
 		formatters_by_ft = {
+			go = { "gofmt" },
 			lua = { "stylua" },
 			rust = { "rustfmt" },
 			c = { "clang-format" },
