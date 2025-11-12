@@ -14,7 +14,7 @@ case "$CHOICE" in
 	~/.config/niri/scripts/record.sh
 	;;
 "screenshot")
-	niri msg action screenshot
+	~/.config/niri/scripts/screenshot.sh
 	;;
 "easyeffects bypass")
 	if [ "$(easyeffects --bypass 3)" = "0" ]; then
