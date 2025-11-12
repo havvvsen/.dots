@@ -9,6 +9,11 @@
 		"when": "terminalFocus && terminalHasSelection"
 	},
 	{
+		"key": "ctrl+v",
+		"command": "workbench.action.terminal.paste",
+		"when": "terminalFocus"
+	},
+	{
 		"key": "ctrl+shift+c",
 		"command": "workbench.action.terminal.sendSequence",
 		"args": {
