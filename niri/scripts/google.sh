@@ -15,6 +15,7 @@ declare -A ENGINES=(
 	["!gh"]="https://github.com/search?q="
 	["!rd"]="https://www.reddit.com/search/?q="
 	["!pb"]="https://pub.dev/packages?q="
+	["!dh"]="https://hub.docker.com/search?q="
 	["!aur"]="https://aur.archlinux.org/packages?K="
 	["!pac"]="https://archlinux.org/packages/?q="
 	["!wiki"]="https://wiki.archlinux.org/index.php?search="
