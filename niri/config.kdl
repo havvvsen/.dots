@@ -31,6 +31,7 @@ cursor {
     hide-after-inactive-ms 1000
 }
 
+// with external keyboard
 output "eDP-1" {
     mode "1920x1080@60.00"
     scale 1.3
@@ -45,6 +46,22 @@ output "HDMI-A-2" {
     transform "normal"
     position x=0 y=0
 }
+
+// // without external keyboard
+// output "HDMI-A-2" {
+//     mode "1920x1080@60.00"
+//     scale 1
+//     transform "normal"
+//     position x=0 y=0
+// }
+//
+// output "eDP-1" {
+//     mode "1920x1080@60.00"
+//     scale 1.3
+//     transform "normal"
+// 		position x=200 y=1080
+//
+// }
 
 layout {
     gaps 8
@@ -94,6 +111,7 @@ layout {
     }
 }
 
+spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
 spawn-at-startup "powermode-indicator"
 spawn-at-startup "vesktop"
 // spawn-at-startup "swww-daemon" "--format" "xrgb"
@@ -101,7 +119,7 @@ spawn-at-startup "sh" "-c" "swaybg --image ~/.dots/wallpapers/bsod.png --output 
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
 spawn-at-startup "swayosd-server"
-spawn-at-startup "easyeffects" "--gapplication-service"
+spawn-at-startup "easyeffects" "--hide-window" "--service-mode"
 spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "dbus-update-activation-environment" "--all"
@@ -109,7 +127,7 @@ spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-at-startup "nm-applet"
 // spawn-at-startup "xwayland-satellite" ":1"
-spawn-at-startup "wlsunset" "-t" "3500" "-T" "6500" "-S" "07:00" "-s" "19:00" "-g" "0.7"
+spawn-at-startup "wlsunset" "-t" "2500" "-T" "8500" "-S" "07:00" "-s" "19:00" "-g" "0.7"
 spawn-at-startup "hypridle"
 spawn-at-startup "kdeconnectd"
 spawn-at-startup "kdeconnect-indicator"
@@ -150,6 +168,9 @@ environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
     EDITOR "nvim"
     ZED_WINDOW_DECORATIONS "server"
+		QT_QPA_PLATFORMTHEME "qt6ct"
+		QT_STYLE_OVERRIDE "Kvantum"
+
 }
 
 prefer-no-csd
@@ -271,7 +292,7 @@ binds {
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     // Super+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Super+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Super+B { spawn "brave"; }
+    Super+B { spawn "google-chrome-stable"; }
     Alt+C { spawn "bash" "-c" "~/.config/niri/scripts/chatgpt.sh"; }
     Alt+S { spawn "bash" "-c" "~/.config/niri/scripts/google.sh"; }
     Super+E { spawn "thunar"; }
