@@ -1,3 +1,7 @@
+# if set -q ZELLIJ
+# else
+#   zellij
+# end
 
 function fish_prompt -d "Write out the prompt"
     # This shows up as USER@HOST /home/user/ >, with the directory colored
@@ -12,6 +16,8 @@ if status is-interactive
     set fish_greeting
 
 end
+
+
 
 fish_vi_key_bindings
 
@@ -61,13 +67,19 @@ alias "car"="bat"
 alias "cr"="cargo run"
 alias "cb"="cargo build"
 
+alias "dr"="dart run"
+
 
 export MANPAGER="nvim +Man!"
 export EDITOR="nvim"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export CHROME_EXECUTABLE=google-chrome-stable
+export ANDROID_HOME=$HOME/Android/Sdk
 
 fish_add_path $HOME/.spicetify
+fish_add_path $HOME/fvm/versions/stable/bin
+fish_add_path $HOME/Android/Sdk/cmdline-tools/latest/bin
+fish_add_path $HOME/Android/Sdk/platform-tools
 
 fish_add_path $HOME/go/bin
 fish_add_path $HOME/.cargo/bin
@@ -75,11 +87,13 @@ fish_add_path $HOME/.cargo/bin
 # Generated for pdtm. Do not edit.
 fish_add_path $HOME/.pdtm/go/bin
 
+fish_add_path "/home/tamara/.bun/bin"
+
+
 # Created by `pipx` on 2025-07-01 08:09:14
 set PATH $PATH $HOME/.local/bin
 set -Ux PAGER less
 
-fish_add_path /home/tamara/.spicetify
 
 
 zoxide init fish | source
