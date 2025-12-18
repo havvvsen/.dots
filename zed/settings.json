@@ -8,7 +8,7 @@
     "background.appearance": "blurred"
   },
   "vim_mode": true,
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "theme": {
@@ -52,14 +52,14 @@
     }
   },
   "auto_install_extensions": {
-    "discord-presence": true,
+    "discord-presence": false,
     "wakatime": true,
     "catppuccin": true,
     "catppuccin-icons": true,
     "dockerfile": true,
     "html": false,
     "emmet": false,
-		"make": true
+    "make": true
   },
   "terminal": {
     "alternate_scroll": "off",
