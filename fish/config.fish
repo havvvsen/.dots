@@ -33,6 +33,7 @@ if test -f ~/.cache/ags/user/generated/terminal/sequences.txt
 end
 
 alias "ls"="eza"
+alias "s"="eza"
 alias "x"="clear"
 alias "c"="wl-copy"
 alias "q"="exit"
@@ -68,6 +69,11 @@ alias "cr"="cargo run"
 alias "cb"="cargo build"
 
 alias "dr"="dart run"
+alias "fr"="flutter run"
+
+
+alias "mr"="make run"
+alias "mb"="make build"
 
 
 export MANPAGER="nvim +Man!"
@@ -97,3 +103,4 @@ set -Ux PAGER less
 
 
 zoxide init fish | source
+direnv hook fish | source
