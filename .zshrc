@@ -53,11 +53,6 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 # rehash after new binary is installed
 zstyle ':completion:*' rehash true
 
-# --- SHELL INTEGRATIONS ---
-
-eval "$(starship init zsh)"
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
 
 # Show ⏎ when a command doesn't end with newline
 PROMPT_EOL_MARK=$'\u23ce'
@@ -65,15 +60,16 @@ PROMPT_EOL_MARK=$'\u23ce'
 
 # --- ALIASES ---
 
-alias ls='ls --color'
 alias ls='eza'
+alias sl='eza'
+alias l='eza'
+alias s='eza'
+alias la='eza -la'
 alias q='exit'
 alias :q='exit'
 alias x='clear'
-alias l='eza'
-alias la='eza -la'
-alias sl='eza'
 alias lg='lazygit'
+alias c='wl-copy'
 alias v='nvim'
 alias mkdir='mkdir -p'
 alias tk='tmux kill-server'
@@ -86,13 +82,6 @@ alias ga='git add'
 alias gcl='git clone'
 alias gp='git push'
 alias gpm='git push -u origin main'
-alias db='distrobox'
-alias db-init-kali='distrobox create --name kali -i docker.io/kalilinux/kali-rolling:latest --home /home/tamara/distrobox/kali --init'
-alias db-init-fedora='distrobox create --name fedora -i registry.fedoraproject.org/fedora-toolbox:latest'
-alias db-init-gentoo='distrobox create --name gentoo -i docker.io/gentoo/stage3:latest --home /home/tamara/distrobox/gentoo'
-alias kali='distrobox enter kali'
-alias gentoo='distrobox enter gentoo'
-alias fedora='distrobox enter fedora'
 alias cat='bat'
 alias car='bat'
 
@@ -100,6 +89,13 @@ alias cr='cargo run'
 alias cb='cargo build'
 alias cbr='cargo build --release'
 alias cbrl='cargo build --release --locked'
+
+alias "dr"="dart run"
+alias "fr"="flutter run"
+
+alias "mr"="make run"
+alias "mb"="make build"
+alias "mbr"="make build-release"
 
 # --- HISTORY ---
 
@@ -125,5 +121,8 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 
-# Created by `pipx` on 2025-09-11 11:40:37
-export PATH="$PATH:/home/tamara/.local/bin"
+# --- SHELL INTEGRATIONS ---
+eval "$(starship init zsh)"
+eval "$(fzf --zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+eval "$(direnv hook zsh)"
