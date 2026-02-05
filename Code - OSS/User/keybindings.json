@@ -1,0 +1,24 @@
+[
+	{
+		"key": "alt+r",
+		"command": "workbench.action.openRecent"
+	},
+	{
+		"key": "ctrl+c",
+		"command": "workbench.action.terminal.copySelection",
+		"when": "terminalFocus && terminalHasSelection"
+	},
+	{
+		"key": "ctrl+v",
+		"command": "workbench.action.terminal.paste",
+		"when": "terminalFocus"
+	},
+	{
+		"key": "ctrl+shift+c",
+		"command": "workbench.action.terminal.sendSequence",
+		"args": {
+			"text": "\u0003"
+		},
+		"when": "terminalFocus"
+	}
+]

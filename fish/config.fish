@@ -28,9 +28,6 @@ fish_vi_key_bindings
 # end
 
 starship init fish | source
-if test -f ~/.cache/ags/user/generated/terminal/sequences.txt
-    cat ~/.cache/ags/user/generated/terminal/sequences.txt
-end
 
 alias "ls"="eza"
 alias "s"="eza"
@@ -54,14 +51,6 @@ alias "ga"="git add"
 alias "gcl"="git clone"
 alias "gp"="git push"
 alias "gpm"="git push -u origin main"
-alias "db"="distrobox"
-alias "db-init-kali"="distrobox create --name kali -i docker.io/kalilinux/kali-rolling:latest --home /home/tamara/distrobox/kali --init"
-alias "db-init-kali"="distrobox create --name kali -i docker.io/kalilinux/kali-rolling:latest --init"
-alias "db-init-fedora"="distrobox create --name fedora -i registry.fedoraproject.org/fedora-toolbox:latest"
-alias "db-init-gentoo"="distrobox create --name gentoo -i docker.io/gentoo/stage3:latest --home /home/tamara/distrobox/gentoo"
-alias "kali"="distrobox enter kali"
-alias "gentoo"="distrobox enter gentoo"
-alias "fedora"="distrobox enter fedora"
 alias "cat"="bat"
 alias "car"="bat"
 
@@ -74,7 +63,6 @@ alias "fr"="flutter run"
 
 alias "mr"="make run"
 alias "mb"="make build"
-
 
 export MANPAGER="nvim +Man!"
 export EDITOR="nvim"
@@ -93,7 +81,7 @@ fish_add_path $HOME/.cargo/bin
 # Generated for pdtm. Do not edit.
 fish_add_path $HOME/.pdtm/go/bin
 
-fish_add_path "/home/tamara/.bun/bin"
+fish_add_path $HOME/.bun/bin
 
 
 # Created by `pipx` on 2025-07-01 08:09:14

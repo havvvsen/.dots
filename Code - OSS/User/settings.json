@@ -1,0 +1,88 @@
+{
+	// EDITOR //
+	"editor": {
+		"lineNumbers": "relative",
+		"fontSize": 16,
+		"fontFamily": "VictorMono NFP SemiBold",
+		"fontLigatures": true,
+		"formatOnSave": true,
+		"defaultFormatter": "vscode.typescript-language-features"
+	},
+	// EXPLORER //
+	"explorer": {
+		"confirmDelete": false,
+		"confirmDragAndDrop": false
+	},
+	// WORKBENCH //
+	"workbench": {
+		"startupEditor": "none",
+		"colorTheme": "Catppuccin Mocha",
+		"iconTheme": "material-icon-theme"
+	},
+	// TERMINAL //
+	"terminal": {
+		"integrated": {
+			"fontFamily": "VictorMono NFP SemiBold",
+			"fontLigatures.enabled": true,
+			"gpuAcceleration": "off",
+			"defaultProfile": {
+				"linux": "fish"
+			},
+			"profiles": {
+				"linux": {
+					"fish": {
+						"path": "/usr/bin/fish"
+					},
+					"bash": {
+						"path": "/usr/bin/bash"
+					}
+				}
+			}
+		}
+	},
+	// EXTENSIONS //
+	// vim //
+	"vim.handleKeys": {
+		"<C-p>": false
+	},
+	// github copilot //
+	"github.copilot.enable": {
+		"*": false,
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false,
+		"typescript": false
+	},
+	// live server //
+	"liveServer.settings.donotShowInfoMsg": true,
+	// LANGUAGES //
+	"[rust]": {
+		"editor.defaultFormatter": "statiolake.vscode-rustfmt",
+		"editor.formatOnSave": true
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[css]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[dart]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true,
+		"editor.rulers": [
+			80
+		],
+		"editor.selectionHighlight": false,
+		"editor.tabCompletion": "onlySnippets",
+		"editor.wordBasedSuggestions": "off"
+	},
+	"dart.flutterHotReloadOnSave": "all",
+	"dart": {
+		"previewFlutterUiGuides": true,
+		"previewFlutterUiGuidesCustomTracking": true
+	},
+	"redhat.telemetry.enabled": true,
+	"[yaml]": {
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	}
+}
