@@ -21,6 +21,7 @@ AH↗️HA↘️HA↗️HA↘️HA↗️HA↘️HA↗️HA↘️ pekora arrows h
 ¯\_(ツ)_/¯ shrug idk i dont know
 ↵ enter key return
 𝕏  twitter x logo
+™  trademark 
 👉👈 etou ughhhhhhh shy
 👉👌 put it in imagination perv
 😀 grinning face face smile happy joy :D grin
