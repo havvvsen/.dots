@@ -1,13 +1,8 @@
-
-# # integrate zellij
-eval "$(zellij setup --generate-auto-start zsh)"
-
-# # integrate tmux
-# if command -v tmux &> /dev/null; then
-#   # Only start tmux if not already inside one
-#   [ -z "$TMUX" ] && exec tmux new-session -A -s main
-# fi
-
+# integrate tmux
+if command -v tmux &> /dev/null; then
+  # Only start tmux if not already inside one
+  [ -z "$TMUX" ] && exec tmux new-session -A -s main
+fi
 
 # --- ZINIT ---
 
@@ -22,6 +17,8 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
 
 # --- SNIPPETS ---
 
