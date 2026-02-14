@@ -33,9 +33,6 @@
 					"tmux": {
 						"path": "/usr/bin/tmux"
 					},
-					"zellij": {
-						"path": "/usr/bin/zellij"
-					},
 					"fish": {
 						"path": "/usr/bin/fish"
 					},
@@ -89,5 +86,25 @@
 	"dart": {
 		"previewFlutterUiGuides": true,
 		"previewFlutterUiGuidesCustomTracking": true
-	}
+	},
+	"gitlens.ai.model": "vscode",
+	"gitlens.ai.vscode.model": "copilot:gpt-4.1",
+	"git.openRepositoryInParentFolders": "always",
+	"[go]": {
+		"editor.defaultFormatter": "golang.go"
+	},
+	"files.associations": {
+		".env*": "dotenv"
+	},
+	"editor.tokenColorCustomizations": {
+		"textMateRules": []
+	},
+	"dotenv.enableAutocloaking": false,
+	"mssql.connectionGroups": [
+		{
+			"name": "ROOT",
+			"id": "ROOT"
+		}
+	],
+	"makefile.configureOnOpen": true
 }
