@@ -110,7 +110,6 @@ layout {
 }
 
 spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
-spawn-at-startup "powermode-indicator"
 spawn-at-startup "vesktop"
 spawn-at-startup "sh" "-c" "swaybg --image ~/.dots/wallpapers/ice.png --output '*' --mode fill"
 spawn-at-startup "waybar"
@@ -119,7 +118,7 @@ spawn-at-startup "swayosd-server"
 spawn-at-startup "easyeffects" "--hide-window" "--service-mode"
 spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-spawn-at-startup "dbus-update-activation-environment" "--all"
+// spawn-at-startup "dbus-update-activation-environment" "--all"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-at-startup "nm-applet"
@@ -278,6 +277,12 @@ window-rule {
 }
 
 window-rule {
+  match app-id="^com.mitchellh.ghostty$"
+	draw-border-with-background false
+	opacity 0.95
+}
+
+window-rule {
   match app-id="^dev.zed.Zed$"
   default-column-width { proportion 1.0; }
   opacity 0.9
@@ -288,7 +293,7 @@ binds {
 
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
     // Super+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Super+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
+    Super+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Super+B { spawn "google-chrome-stable"; }
     Alt+C { spawn "bash" "-c" "~/.config/niri/scripts/chatgpt.sh"; }
     Alt+S { spawn "bash" "-c" "~/.config/niri/scripts/google.sh"; }
