@@ -244,13 +244,13 @@ load_plugins {
 simplified_ui true
 
  
-theme "catppuccin-mocha-custom"
+theme "tokyo-night-dark"
  
 default_mode "locked"
- 
+a
 default_shell "/usr/bin/fish"
 // default_cwd "/tmp"
-default_layout "default" //compact
+default_layout "custom" //compact
 // layout_dir "/tmp"
 // theme_dir "/tmp"
 mouse_mode true
@@ -276,8 +276,8 @@ copy_on_select true
 // scrollback_editor "/usr/bin/vim"
  
 // session_name "<RANDOM>"
-// session_name "spawn"
-// attach_to_session false
+session_name "spawn"
+attach_to_session true
  
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:

@@ -1,121 +1,63 @@
 add_newline = true
-format = "$hostname $username $directory $docker_context $rust $nodejs $python $git_branch $git_status\n$nix_shell $container $character"
-palette = "catppuccin_mocha"
-
-[battery]
-disabled = true
+format = "$username $hostname  $directory $golang $rust $python $git_branch $git_status\n $character"
 
 [character]
 error_symbol = "[ 󰅙 ](bold fg:#f38ba8)"
 success_symbol = "[  ](bold fg:#cba6f7)"
 
-[container]
-format = "[$symbol](fg:#f38ba8) [$name](fg:#89dceb)"
-symbol = "󰏖"
-
-[directory]
-format = "([ @ ](bg:default fg:#f38ba8) [$path ]($style))"
-home_symbol = "  "
-read_only = "  "
-style = "bg:default fg:default"
-truncation_length = 6
-truncation_symbol = "••/"
-
-[directory.substitutions]
-Desktop = "  "
-Documents = "  "
-Downloads = "  "
-GitHub = ""
-Music = " 󰎈 "
-Pictures = "  "
-Videos = "  "
-
-[docker_context]
-format = "[$symbol ](blue)"
-symbol = " "
-
-[git_branch]
-format = "[[   on](fg:white) $symbol $branch ](fg:purple)(:$remote_branch)"
-style = "bold green"
-symbol = "󰘬"
-truncation_length = 4
-truncation_symbol = "…/"
-
-[git_status]
-ahead = "⇡${count}"
-behind = "⇣${count}"
-conflicted = "🏳"
-deleted = " "
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-format = "[$all_status$ahead_behind]($style) "
-modified = " "
-renamed = "󰖷 "
-staged = "[++\\($count\\)](green)"
-stashed = "󰏗 "
-style = "bold green"
-untracked = " "
-up_to_date = " "
-
-[hostname]
-disabled = false
-format = "[•$hostname](bg:default fg:#cdd6f4)"
-ssh_only = true
-trim_at = ".companyname.com"
-
-[lua]
-format = "[$symbol ](blue)"
-symbol = "󰢱 "
-
-[nix_shell]
-disabled = false
-format = "[$symbol]($style)"
-style = "bg:default fg:blue"
-symbol = " "
-
-[nodejs]
-format = "[$symbol ](yellow)"
-symbol = " "
-
-[palettes.catppuccin_mocha]
-base = "#1e1e2e"
-blue = "#89b4fa"
-crust = "#11111b"
-flamingo = "#f2cdcd"
-green = "#a6e3a1"
-lavender = "#b4befe"
-mantle = "#181825"
-maroon = "#eba0ac"
-mauve = "#cba6f7"
-overlay0 = "#6c7086"
-overlay1 = "#7f849c"
-overlay2 = "#9399b2"
-peach = "#fab387"
-pink = "#f5c2e7"
-red = "#f38ba8"
-rosewater = "#f5e0dc"
-sapphire = "#74c7ec"
-sky = "#89dceb"
-subtext0 = "#a6adc8"
-subtext1 = "#bac2de"
-surface0 = "#313244"
-surface1 = "#45475a"
-surface2 = "#585b70"
-teal = "#94e2d5"
-text = "#cdd6f4"
-yellow = "#f9e2af"
-
-[python]
-format = '[via [$symbol](fg:#f5c2e7) ([$version](fg:#cdd6f4)) ([$virtualenv](fg:#a6e3a1))]($style)'
-style = "bg:default fg:default"
-symbol = ""
-
-[rust]
-symbol = "🦀"
-style = "bg:default fg:default"
-format = "[via](fg:#94e2d5) [$symbol]($style) [$version](fg:#cdd6f4)"
-
 [username]
-format = "[   $user]($style) "
+format = "[   $user](bg:default fg:#a6e3a1)[ @](bg:default fg:#f38ba8)"
 show_always = true
 style_root = "bg:default fg:#f38ba8"
 style_user = "bg:default fg:#cdd6f4"
+
+[hostname]
+disabled = false
+format = "[$hostname](bg:default fg:#cba6f7)"
+ssh_only = false
+trim_at = ".companyname.com"
+
+[directory]
+format = "([  ](bg:default fg:#f38ba8) [$path ]($style))"
+style = "bg:default fg:default"
+home_symbol = "  "
+read_only = "  "
+truncation_length = 6
+truncation_symbol = "••/"
+
+[golang]
+format = "[$symbol]($style)  [$version](fg:red)"
+style = "bg:default fg:default"
+symbol = ""
+
+[rust]
+format = "[$symbol]($style)  [$version](fg:red)"
+style = "bg:default fg:default"
+symbol = ""
+
+[python]
+format = '[[$symbol](fg:#f5c2e7)  ([$version](fg:red)) ([$virtualenv](fg:#a6e3a1))]($style)'
+style = "bg:default fg:default"
+symbol = "󰌠"
+
+[git_branch]
+format = "[$symbol $branch ](fg:purple)(:$remote_branch)"
+style = "bold green"
+symbol = "󰘬"
+truncation_length = 10
+truncation_symbol = "…/"
+
+[git_status]
+format = "[$all_status$ahead_behind]($style) "
+style = "bold green"
+ahead = " ↑${count} "
+behind = " ↓${count} "
+conflicted = " C "
+deleted = "[ D-$count ](fg:red)"
+diverged = " ↕ ↑${ahead_count} ↓${behind_count} "
+modified = "[ M-${count}](fg:red)"
+renamed = "R-${count}"
+staged = "[ M-${count}](fg:green)"
+stashed = "[ T-${count} ]"
+untracked = " U "
+up_to_date = " ✓ "

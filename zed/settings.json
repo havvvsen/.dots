@@ -1,8 +1,26 @@
 {
-  "features": {
-    "edit_prediction_provider": "none",
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
   },
-
+  "project_panel": {
+    "dock": "right",
+    "default_width": 300,
+  },
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini",
+      "enable_thinking": false,
+      "effort": "high",
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "edit_predictions": {
+    "provider": "none",
+  },
   "icon_theme": "Catppuccin Mocha",
   "experimental.theme_overrides": {
     "background.appearance": "blurred",
@@ -39,7 +57,7 @@
     "enabled": true,
     "coloring": "indent_aware",
   },
-  "auto_signature_help": false,
+  "auto_signature_help": true,
   "confirm_quit": false,
   "languages": {
     "JavaScript": {
@@ -50,30 +68,36 @@
         },
       },
     },
-    "Dart": {
-      "always_treat_brackets_as_autoclosed": true,
+    "Python": {
+      "language_servers": ["ty", "ruff"],
+    },
+    "Zig": {
+      "language_servers": ["zls"],
+      "colorize_brackets": true
     },
   },
-  "diagnostics": {
-    "inline": {
-      "enabled": true,
+  "lsp": {
+    "zls": {
+      "binary": {
+        "path": "/usr/local/bin/zls",
+        "arguments": [],
+      },
     },
   },
   "auto_install_extensions": {
-    "discord-presence": true,
+    "discord-presence": false,
     "wakatime": true,
     "catppuccin": true,
     "catppuccin-icons": true,
     "dockerfile": true,
-    "html": false,
-    "emmet": false,
-    "make": true,
-    "dart": true,
+    "html": true,
+    "emmet": true,
+    "make": false,
   },
   "terminal": {
     "alternate_scroll": "off",
     "blinking": "terminal_controlled",
-    "copy_on_select": true,
+    "copy_on_select": false,
     "keep_selection_on_copy": false,
     "dock": "bottom",
     "default_width": 640,
@@ -92,9 +116,7 @@
     "minimum_contrast": 45,
     "option_as_meta": false,
     "button": true,
-    "shell": {
-      "program": "/usr/bin/fish",
-    },
+    "shell": "system",
     "toolbar": {
       "breadcrumbs": false,
     },

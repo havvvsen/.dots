@@ -1,7 +1,4 @@
-# if set -q ZELLIJ
-# else
-#   zellij
-# end
+eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 function fish_prompt -d "Write out the prompt"
     # This shows up as USER@HOST /home/user/ >, with the directory colored
@@ -17,15 +14,7 @@ if status is-interactive
 
 end
 
-
-
 fish_vi_key_bindings
-
-# if status is-interactive
-#     if not set -q TMUX
-#         tmux attach-session -t genesis || tmux new-session -s genesis
-#     end
-# end
 
 starship init fish | source
 
@@ -39,7 +28,8 @@ alias "l"="eza"
 alias "la"="eza -la"
 alias "sl"="eza"
 alias "lg"="lazygit"
-alias "v"="tmux set-option status;nvim"
+alias "v"="nvim"
+alias "zed"="zeditor"
 alias "mkdir"="mkdir -p"
 alias "tk"="tmux kill-server"
 alias "zk"="zellij kill-all-sessions"
@@ -60,35 +50,28 @@ alias "cb"="cargo build"
 alias "dr"="dart run"
 alias "fr"="flutter run"
 
-
 alias "mr"="make run"
 alias "mb"="make build"
 
 export MANPAGER="nvim +Man!"
 export EDITOR="nvim"
-export _JAVA_AWT_WM_NONREPARENTING=1
 export CHROME_EXECUTABLE=google-chrome-stable
 export ANDROID_HOME=$HOME/Android/Sdk
+export PAGER="less"
+export PNPM_HOME=$HOME/.pnpm
 
 fish_add_path $HOME/.spicetify
 fish_add_path $HOME/fvm/versions/stable/bin
 fish_add_path $HOME/Android/Sdk/cmdline-tools/latest/bin
 fish_add_path $HOME/Android/Sdk/platform-tools
 
+fish_add_path $HOME/.pnpm
 fish_add_path $HOME/go/bin
 fish_add_path $HOME/.cargo/bin
-
-# Generated for pdtm. Do not edit.
-fish_add_path $HOME/.pdtm/go/bin
-
 fish_add_path $HOME/.bun/bin
-
-
-# Created by `pipx` on 2025-07-01 08:09:14
-set PATH $PATH $HOME/.local/bin
-set -Ux PAGER less
-
-
+fish_add_path $HOME/.local/bin
 
 zoxide init fish | source
 direnv hook fish | source
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
