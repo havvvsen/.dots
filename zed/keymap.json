@@ -2,9 +2,15 @@
   {
     "bindings": {
       "alt alt": "file_finder::Toggle",
-      "f e": "project_panel::ToggleFocus",
-			"alt-n": null
-
+      // "f e": "project_panel::ToggleFocus",
+      "alt-n": null
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-space": "editor::ShowCompletions",
+      "shift-ctrl-space": "editor::ShowSignatureHelp"
     }
   },
   {

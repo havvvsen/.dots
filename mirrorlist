@@ -1,4 +1,0 @@
-## Kenya
-Server = http://archlinux.mirror.liquidtelecom.com/$repo/os/$arch
-Server = https://archlinux.mirror.liquidtelecom.com/$repo/os/$arch
-

@@ -24,32 +24,43 @@ input {
 }
 
 cursor {
-    xcursor-theme "Bibata-Modern-Ice"
+    // xcursor-theme "Bibata-Modern-Ice"
     xcursor-size 25
 
     hide-when-typing
     hide-after-inactive-ms 1000
 }
 
-output "eDP-1" {
-    mode "1920x1080@60.00"
-    scale 1
-    transform "normal"
-    position x=1920 y=260
-}
-
+// // with external keyboard
 // output "eDP-1" {
 //     mode "1920x1080@60.00"
-//     scale 1.15
+//     scale 1.3
 //     transform "normal"
-//     position x=0 y=1080
+// 		position x=1920 y=260
+//
+// }
+//
+// output "HDMI-A-2" {
+//     mode "1920x1080@60.00"
+//     scale 1
+//     transform "normal"
+//     position x=0 y=0
 // }
 
+// without external keyboard
 output "HDMI-A-2" {
     mode "1920x1080@60.00"
     scale 1
     transform "normal"
     position x=0 y=0
+}
+
+output "eDP-1" {
+    mode "1920x1080@60.00"
+    scale 1.3
+    transform "normal"
+		position x=200 y=1080
+
 }
 
 layout {
@@ -76,8 +87,6 @@ layout {
       off
         width 1
         active-color "#cba6f7"
-        inactive-color "#45475a"
-        urgent-color "#f38ba8"
     }
 
     border {
@@ -100,27 +109,22 @@ layout {
     }
 }
 
-spawn-at-startup "powermode-indicator"
-spawn-at-startup "vesktop"
-// spawn-at-startup "swww-daemon" "--format" "xrgb"
-spawn-at-startup "sh" "-c" "swaybg --image ~/.dots/wallpapers/bsod.png --output '*' --mode fill"
+spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
+spawn-at-startup "sh" "-c" "swaybg --image ~/.dots/wallpapers/ice.png --output '*' --mode fill"
 spawn-at-startup "waybar"
 spawn-at-startup "swaync"
 spawn-at-startup "swayosd-server"
-spawn-at-startup "easyeffects" "--gapplication-service"
+spawn-at-startup "easyeffects" "--hide-window" "--service-mode"
 spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-spawn-at-startup "dbus-update-activation-environment" "--all"
+// spawn-at-startup "dbus-update-activation-environment" "--all"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-at-startup "nm-applet"
-// spawn-at-startup "xwayland-satellite" ":1"
-spawn-at-startup "wlsunset" "-t" "3500" "-T" "6500" "-S" "07:00" "-s" "19:00" "-g" "0.7"
-spawn-at-startup "hypridle"
+spawn-at-startup "wlsunset" "-t" "2500" "-T" "8500" "-S" "07:00" "-s" "19:00" "-g" "0.7"
 spawn-at-startup "kdeconnectd"
 spawn-at-startup "kdeconnect-indicator"
 // spawn-at-startup "lbagtk" "--low" "20" "--risky" "10" "--daemon"
-spawn-at-startup "vicinae" "server"
 
 
 hotkey-overlay {
@@ -133,11 +137,6 @@ overview {
   workspace-shadow {
     off
   }
-}
-
-layer-rule {
-  match namespace="^swww-daemon$"
-  place-within-backdrop true
 }
 
 layer-rule {
@@ -156,6 +155,16 @@ environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
     EDITOR "nvim"
     ZED_WINDOW_DECORATIONS "server"
+		QT_QPA_PLATFORMTHEME "qt6ct"
+		QT_STYLE_OVERRIDE "Kvantum"
+	
+	// // atspi
+	//   GTK_MODULES "gail:atk-bridge"
+	//  OOO_FORCE_DESKTOP "gnome"
+	//  GNOME_ACCESSIBILITY "1"
+	//  QT_ACCESSIBILITY "1"
+	//  QT_LINUX_ACCESSIBILITY_ALWAYS_ON "1"
+
 }
 
 prefer-no-csd
@@ -171,50 +180,8 @@ window-rule {
 }
 
 window-rule {
-  match app-id="^waypaper$"
-  open-floating true
-}
-
-window-rule {
-  match title="^Bitwarden$"
-  open-floating true
-  block-out-from "screen-capture"
-}
-
-window-rule {
-  match app-id="^blueberry.py$"
-  open-floating true
-}
-
-window-rule {
-  match app-id="^org.pulseaudio.pavucontrol$"
-  open-floating true
-}
-
-window-rule {
-  match app-id="^io.bassi.Amberol$"
-  open-floating true
-}
-
-window-rule {
-  match app-id="^blender$"
-  opacity 1.0
-}
-
-window-rule {
-  match app-id="^org.kde.kdenlive$"
-  opacity 1.0
-}
-
-window-rule {
-  match app-id="^ONLYOFFICE$"
-  opacity 1.0
-}
-
-window-rule {
   match app-id="^scrcpy$"
   open-floating true
-  opacity 1.0
 }
 
 window-rule {
@@ -235,10 +202,6 @@ window-rule {
   max-height 300
 }
 
-window-rule {
-  match app-id="^org.gnome.Chess$"
-  open-floating true
-}
 
 window-rule {
   match title="chatgpt.com_/"
@@ -255,15 +218,6 @@ window-rule {
   default-column-width { proportion 0.25; }
 }
 
-window-rule {
-  match app-id="^code$"
-  default-column-width { proportion 1.0; }
-}
-
-window-rule {
-  match app-id="^dev.zed.Zed$"
-  default-column-width { }
-}
 
 window-rule {
     geometry-corner-radius 1
@@ -271,13 +225,43 @@ window-rule {
     opacity 1.0
 }
 
+window-rule {
+  match app-id="^code$"
+  default-column-width { proportion 1.0; }
+	draw-border-with-background false
+	opacity 0.9
+}
+
+window-rule {
+  match app-id="^code-oss$"
+  default-column-width { proportion 1.0; }
+	draw-border-with-background false
+	opacity 0.9
+}
+
+window-rule {
+  match app-id="^Alacritty$"
+  opacity 0.99
+}
+
+
+window-rule {
+  match app-id="^com.mitchellh.ghostty$"
+	draw-border-with-background false
+	opacity 0.95
+}
+
+window-rule {
+  match app-id="^dev.zed.Zed$"
+  default-column-width { proportion 1.0; }
+  opacity 0.9
+}
+
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
-    // Super+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Super+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Super+B { spawn "brave"; }
+    Super+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "alacritty"; }
+    Super+B { spawn "google-chrome-stable"; }
     Alt+C { spawn "bash" "-c" "~/.config/niri/scripts/chatgpt.sh"; }
     Alt+S { spawn "bash" "-c" "~/.config/niri/scripts/google.sh"; }
     Super+E { spawn "thunar"; }
@@ -285,7 +269,6 @@ binds {
     Alt+A { spawn "fuzzel"; }
     Alt+Space { spawn "vicinae" "toggle"; }
     Super+Shift+P { spawn "frbw" "show"; }
-    Super+X { spawn "hyprpicker" "-a"; }
 
     Super+Ctrl+W { spawn "waypaper"; }
     Super+Period { spawn "~/.config/niri/scripts/emoji.sh"; }
@@ -469,6 +452,6 @@ binds {
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
     Ctrl+Alt+Delete { spawn "~/.config/niri/scripts/powermenu.sh"; }
-    Alt+Delete { quit; }
+    // Alt+Delete { quit; }
     Mod+Shift+P { power-off-monitors; }
 }
