@@ -1,9 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Version=1.0
-Terminal=false
-Type=Application
-Name=MT5 Demo
-Exec=brave --app=https://mt5-demo-web.deriv.com/terminal?server=Deriv-Demo
-Icon=/home/tamara/.local/share/applications/icons/mt5.png
-

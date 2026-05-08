@@ -1,9 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Version=1.0
-Terminal=false
-Type=Application
-Name=MT5 Real
-Exec=brave --app=https://mt5-real02-web-svg.deriv.com/terminal?login=100554281&server=DerivSVG-Server-02
-Icon=/home/tamara/.local/share/applications/icons/mt5.png
-

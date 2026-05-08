@@ -1,8 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Version=1.0
-Terminal=false
-Type=Application
-Name=Instagram
-Exec=brave --app=https://instagram.com
-Icon=/home/tamara/.local/share/applications/icons/instagram.png
