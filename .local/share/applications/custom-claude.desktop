@@ -1,9 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Version=1.0
-Terminal=false
-Type=Application
-Name=Claude
-Exec=brave --app=https://claude.ai
-Icon=/home/tamara/.local/share/applications/icons/claude.svg
-

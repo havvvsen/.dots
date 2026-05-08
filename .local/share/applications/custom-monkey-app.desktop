@@ -1,9 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Version=1.0
-Terminal=false
-Type=Application
-Name=monkey app
-Exec=brave --app=https://www.monkey.app/#/home
-Icon=/home/tamara/.local/share/applications/icons/monkey.png
-

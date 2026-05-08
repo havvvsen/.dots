@@ -1,8 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Version=1.0
-Terminal=false
-Type=Application
-Name=Docker Hub
-Exec=brave --app=https://hub.docker.com/explore
-Icon=/home/tamara/.local/share/applications/icons/docker.png

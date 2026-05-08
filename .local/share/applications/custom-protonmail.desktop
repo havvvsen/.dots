@@ -1,9 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Version=1.0
-Terminal=false
-Type=Application
-Name=Proton Mail
-Exec=brave --app=https://mail.proton.me/u/0/inbox
-Icon=/home/tamara/.local/share/applications/icons/proton-mail.png
-

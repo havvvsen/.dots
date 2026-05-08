@@ -1,9 +1,0 @@
-#!/usr/bin/env xdg-open
-[Desktop Entry]
-Version=1.0
-Terminal=false
-Type=Application
-Name=Chess
-Exec=brave --app=https://chess.com
-Icon=/home/tamara/.local/share/applications/icons/chess.svg
-
