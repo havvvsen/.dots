@@ -2,8 +2,10 @@ add_newline = true
 format = "$username $hostname  $directory $golang $rust $python $git_branch $git_status\n $character"
 
 [character]
-error_symbol = "[ 󰅙 ](bold fg:#f38ba8)"
-success_symbol = "[  ](bold fg:#cba6f7)"
+# success_symbol = "[󰘧 ](bold fg:#cba6f7)"
+# error_symbol = "[󰘧 ](bold fg:#f38ba8)"
+success_symbol = "[→ ](bold fg:#cba6f7)"
+error_symbol = "[→ ](bold fg:#f38ba8)"
 
 [username]
 format = "[   $user](bg:default fg:#a6e3a1)[ @](bg:default fg:#f38ba8)"
@@ -18,10 +20,9 @@ ssh_only = false
 trim_at = ".companyname.com"
 
 [directory]
-format = "([  ](bg:default fg:#f38ba8) [$path ]($style))"
+format = "( [$path ]($style))"
 style = "bg:default fg:default"
-home_symbol = "  "
-read_only = "  "
+read_only = "L "
 truncation_length = 6
 truncation_symbol = "••/"
 
@@ -53,11 +54,11 @@ style = "bold green"
 ahead = " ↑${count} "
 behind = " ↓${count} "
 conflicted = " C "
-deleted = "[ D-$count ](fg:red)"
+deleted = "[ D→$count ](fg:red)"
 diverged = " ↕ ↑${ahead_count} ↓${behind_count} "
-modified = "[ M-${count}](fg:red)"
-renamed = "R-${count}"
-staged = "[ M-${count}](fg:green)"
-stashed = "[ T-${count} ]"
-untracked = " U "
+modified = "[ M→${count}](fg:red)"
+renamed = "R→${count}"
+staged = "[ M→${count}](fg:green)"
+stashed = "[ T→${count} ]"
+untracked = "[ U→${count} ](fg:red)"
 up_to_date = " ✓ "
