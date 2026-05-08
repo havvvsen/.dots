@@ -4,9 +4,9 @@ pkill fuzzel
 
 options="Snip\nScreen\nWindow"
 
-choice=$(echo -e "$options" | fuzzel --dmenu -p "> ")
+choice=$(echo -e "$options" | fuzzel --dmenu)
 
-case "$choice" in 
+case "$choice" in
 Screen)
   niri msg action screenshot-screen
   ;;
