@@ -13,10 +13,10 @@ return {
       ensure_installed = {
         -- install language servers
         "lua-language-server",
-        "clangd",
-        "rust-analyzer",
+        -- "clangd",
+        -- "rust-analyzer",
         "ty",
-        "gopls",
+        -- "gopls",
         "protols",
 
         -- Web Dev --
@@ -41,7 +41,7 @@ return {
         -- install formatters
         "stylua",
         "prettier",
-        "clang-format",
+        -- "clang-format",
         "shfmt",
         -- "buf",
         "ruff",
