@@ -3,7 +3,3 @@ services:
     image: "excalidraw/excalidraw:latest"
     ports:
       - 5000:80
-    volumes:
-      - excalidraw-volume
-volumes:
-  excalidraw-volume:
