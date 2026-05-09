@@ -41,7 +41,7 @@ return {
     servers = {
       -- "pyright"
       "clangd",
-      "rust_analyzer",
+      "rust-analyzer",
       "ty",
       "gopls",
     },
