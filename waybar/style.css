@@ -1,62 +1,43 @@
-@define-color main_accent #cba6f7;
-@define-color secondary_accent #89b4fa;
+@define-color bg #282828;
+@define-color bg0_h #1d2021;
+@define-color bg0_s #32302f;
+@define-color bg0 #282828;
+@define-color bg1 #3c3836;
+@define-color bg2 #504945;
+@define-color bg3 #665c54;
+@define-color bg4 #7c6f64;
 
-@define-color rosewater #f5e0dc;
-@define-color flamingo #f2cdcd;
-@define-color pink #f5c2e7;
-@define-color mauve #cba6f7;
-@define-color red #f38ba8;
-@define-color maroon #eba0ac;
-@define-color peach #fab387;
-@define-color yellow #f9e2af;
-@define-color green #a6e3a1;
-@define-color teal #94e2d5;
-@define-color sky #89dceb;
-@define-color sapphire #74c7ec;
-@define-color blue #89b4fa;
-@define-color lavender #b4befe;
-@define-color text #cdd6f4;
-@define-color subtext1 #bac2de;
-@define-color subtext0 #a6adc8;
-@define-color overlay2 #9399b2;
-@define-color overlay1 #7f849c;
-@define-color overlay0 #6c7086;
-@define-color surface2 #585b70;
-@define-color surface1 #45475a;
-@define-color surface0 #313244;
-@define-color base #1e1e2e;
-@define-color mantle #181825;
-@define-color crust #11111b;
+@define-color fg #ebdbb2;
+@define-color fg0 #fbf1c7;
+@define-color fg1 #ebdbb2;
+@define-color fg2 #d5c4a1;
+@define-color fg3 #bdae93;
+@define-color fg4 #a89984;
+
+@define-color red #cc241d;
+@define-color green #98971a;
+@define-color yellow #d78821;
+@define-color blue #458588;
+@define-color purple #b16286;
+@define-color aqua #689d6a;
+@define-color orange #d65d0e;
+@define-color gray #a89984;
+
 
 * {
-  font-family: "SpaceMono Nerd Font Propo";
-  font-size: 97%;
+    font-family: "Iosevka NFP";
+    font-size: 15px;
 }
 
 window#waybar {
-  background: @crust;
+  background: @bg0_h;
   border-radius: 0px;
-  border: 1px solid @surface2;
+  margin: 1px 0px 0px 0px;
+  border: 1px solid @bg
 }
 
-tooltip {
-  color: @text;
-  background: @mantle;
-  border-radius: 10px;
-}
-
-tooltip label {
-  color: @text;
-  padding-right: 2px;
-  padding-left: 2px;
-}
-
-#custom-menu {
-  color: @crust;
-  background-color: @main_accent;
-  font-size: 18px;
-  margin: 7px 7px 2px 7px;
-  /* margin: 5px; */
+#cpu {
+  margin-left: 8px;
 }
 
 #cpu,
@@ -64,142 +45,80 @@ tooltip label {
 #temperature,
 #disk,
 #clock {
-  color: @text;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  color: @fg;
 }
 
-
 #temperature.critical {
-  background-color: @error;
+ background-color: @red;
 }
 
 #clock {
-  color: @text;
-}
-
-#privacy {
-  margin-top: 5px;
+  color: @fg;
 }
 
 #privacy-item.screenshare {
   color: @red;
 }
-
 #privacy-item.audio-in {
   color: @red;
 }
-
 #privacy-item.audio-out {
   color: @green;
 }
 
-#custom-wfrecorder {
-  color: @red;
-  font-size: 15px;
-  margin-top: 5px;
-}
-
 #workspaces button {
-  color: @text;
-  font-size: 13px;
+  color: @fg4;
   padding: 0px;
-  margin: 2px 7px 2px 7px;
-  border-radius: 0px;
-}
-
-#workspaces button:not(.active):hover {
-  color: @text;
-  background-color: @surface0;
 }
 
 #workspaces button.empty {
-  color: @surface1;
+  color: @fg4;
 }
 
 #workspaces button.active {
-  color: @mantle;
-  background-color: @main_accent;
-}
-
-#workspaces button.visible {
-  color: @mantle;
-  background-color: @main_accent;
+  color: @fg;
 }
 
 #workspaces button.urgent {
-  color: @mantle;
-  background-color: @error;
+  color: @red;
 }
 
-#custom-swaync,
-#bluetooth,
-#idle_inhibitor {
-  color: @surface1;
+#network {
+  color: @fg;
 }
+
+#idle_inhibitor {
+  margin-right: 8px;
+  color: @gray;
+}
+
+#idle_inhibitor.activated {
+  color: @fg;
+}
+
+#custom-swaync {
+  color: @gray;
+}
+
 
 #custom-swaync,
 #custom-swaync.dnd-none,
 #custom-swaync.dnd-inhibited-none {
-  font-size: 11px;
-  color: @surface1;
+  font-size: 14px;
+  color: @fg2;
 }
 
 #custom-swaync.notification {
-  color: @text;
+  color: @fg;
 }
 
 #custom-swaync.inhibited-notification,
 #custom-swaync.dnd-notification,
 #custom-swaync.dnd-inhibited-notification {
-  color: @text;
+  color: @fg;
 }
 
-#bluetooth {
-  font-size: 14px;
-  padding: 1px 0px 0px 0px;
-}
-
-#bluetooth.connected {
-  color: @text;
-}
-
-#idle_inhibitor {
-  font-size: 15px;
-  margin-bottom: 3px;
-}
-
-#idle_inhibitor.activated {
-  color: @text;
-}
-
-
-/* #battery .icon { */
-/*   font-size: 100px; */
-/* } */
-
-#battery {
-  color: @text;
-  margin: 4px 7px 9px 7px;
-}
-
-#battery.charging {
-  background-color: @green;
-  color: @crust;
-}
-
-#battery.full {
-  background-color: @blue;
-  color: @crust;
-}
-
-#battery.plugged {
-  background-color: @yellow;
-  color: @crust;
-}
-
-#battery.critical:not(.charging) {
-  background-color: @red;
-  color: @crust;
-  color: @error;
+#tray {
+  font-size: 10px;
+  margin-right: 8px;
 }
