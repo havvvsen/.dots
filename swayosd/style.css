@@ -1,8 +1,13 @@
+@define-color mantle #181825;
+@define-color surface0 #313244;
+@define-color mauve #cba6f7;
+@define-color green #a6e3a1;
+
 window#osd {
   padding: 0px;
-  border-radius: 5px;
-  border: none;
-  background: #181825;
+  border-radius: 3px;
+  border: 0.5px solid @surface0;
+  background: @mantle;
 }
 
 window#osd #container {
@@ -12,7 +17,7 @@ window#osd #container {
 
 window#osd image,
 window#osd label {
-  color: #a6e3a1;
+  color: @green;
 }
 
 window#osd progressbar:disabled,
@@ -22,21 +27,21 @@ window#osd image:disabled {
 
 window#osd progressbar {
   min-height: 20px;
-  border-radius: 5px;
+  border-radius: 3px;
   background: transparent;
   border: none;
 }
 
 window#osd trough {
   min-height: inherit;
-  border-radius: 5px;
+  border-radius: 3px;
   border: none;
-  background: #313244;
+  background: @surface0;
 }
 
 window#osd progress {
   min-height: inherit;
-  border-radius: 5px;
+  border-radius: 3px;
   border: none;
-  background: #cba6f7;
+  background: @mauve;
 }

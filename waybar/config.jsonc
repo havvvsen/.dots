@@ -1,25 +1,25 @@
 [
   {
-    "custom/menu": {
-      "format": "󰣇",
-      "on-click": "fuzzel",
-      "tooltip": false
-    },
+    "ipc": true,
+    "layer": "top",
+    "gtk-layer-shell": true,
+    "position": "bottom",
+    "spacing": 6,
     "cpu": {
-      "format": "<span foreground='#cba6f7'></span>\n{usage}",
+      "format": "<span foreground='#cba6f7'>Cpu:</span> {usage}",
       "format-alt-click": "click",
       "interval": 1,
       "min-length": 5
     },
     "memory": {
-      "format": "<span foreground='#cba6f7'></span>\n{percentage}",
+      "format": "<span foreground='#cba6f7'>Mem:</span> {percentage}",
       "interval": 10,
       "tooltip": false
     },
     "temperature": {
       "critical-threshold": 82,
-      "format": "<span foreground='#cba6f7'></span>\n{temperatureC}",
-      "format-critical": "<span foreground='#f38ba8'></span>\n{temperatureC}",
+      "format": "<span foreground='#cba6f7'>Temp:</span> {temperatureC}",
+      "format-critical": "<span foreground='#f38ba8'>Temp</span> {temperatureC}",
       "hwmon-path": [
         "/sys/class/hwmon/hwmon1/temp1_input",
         "/sys/class/thermal/thermal_zone0/temp"
@@ -28,17 +28,32 @@
       "tooltip": true
     },
     "disk": {
-      "format": "<span foreground='#cba6f7'></span>\n{percentage_used}",
+      "format": "<span foreground='#cba6f7'>Disk:</span> {percentage_used}",
       "interval": 30,
       "path": "/",
       "tooltip": false
     },
-    "clock": {
-      "format": "<span foreground='#cba6f7'></span>\n{:%H\n%M}",
+    "clock#time": {
+      "format": "{:%H:%M}hrs",
       "interval": 1,
       "tooltip": false
     },
-    "privacy": {
+    "clock#date": {
+	"interval": 20,
+        "format": "{:%A-%d-%B-%Y}",
+        "on-click": "gnome-calendar",
+	"tooltip": false
+    },
+    "custom/weather": {
+        "exec": "curl 'https://wttr.in/?format=1'",
+        "interval": 3600
+    },
+    "custom/dnd": {
+	"exec": "makoctl mode",
+	"format": "{}",
+        "interval": 10
+    },
+    "privacy" : {
       "icon-spacing": 12,
       "icon-size": 13,
       "transition-duration": 250,
@@ -58,147 +73,50 @@
           "tooltip": true,
           "tooltip-icon-size": 24
         }
-      ],
-      "ignore-monitor": true,
-      "ignore": [
-        {
-          "type": "audio-in",
-          "name": "cava"
-        },
-        {
-          "type": "screenshare",
-          "name": "obs"
-        }
+      // "ignore-monitor": true,
       ]
     },
+
     "niri/workspaces": {
       "format": "{index}"
     },
-    "hyprland/workspaces": {
-      "disable-scroll": true,
-      "all-outputs": false,
-      "active-only": true,
-      "on-scroll-up": "hyprctl dispatch workspace -1",
-      "on-scroll-down": "hyprctl dispatch workspace +1",
-      "on-click": "activate",
-      "format": "{icon}",
-      "orientation": "vertical",
-      "persistent-workspaces": {
-        "HDMI-A-2": [
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
-        "eDP-1": [
-          6,
-          7,
-          8,
-          9
-        ]
-      }
+    "network": {
+        "format-wifi": "<span foreground='#cba6f7'>{ifname}: </span>{ipaddr}<span foreground='#cba6f7'>/</span>{cidr} <span foreground='#cba6f7'>↑</span>{bandwidthUpBits} <span foreground='#cba6f7'>↓</span>{bandwidthDownBits}",
+        "format-etherner": "<span foreground='#cba6f7'>{ifname}: </span>{ipaddr}<span foreground='#cba6f7'>/</span>{cidr} <span foreground='#cba6f7'>↑</span>{bandwidthUpBits} <span foreground='#cba6f7'>↓</span>{bandwidthDownBits}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "",
+        "family": "ipv4"
     },
-    "custom/swaync": {
-      "escape": true,
-      "exec": "swaync-client -swb",
-      "exec-if": "which swaync-client",
-      "format": "{icon}",
-      "format-icons": {
-        "dnd-inhibited-none": "",
-        "dnd-inhibited-notification": "",
-        "dnd-none": "",
-        "dnd-notification": "",
-        "inhibited-none": "",
-        "inhibited-notification": "",
-        "none": "",
-        "notification": ""
-      },
-      "on-click": "sleep 0.1 && swaync-client -t -sw",
-      "on-click-right": "swaync-client -d -sw",
-      "return-type": "json",
-      "tooltip": false
+
+    "tray": {
+      "icon-size": 15,
+      "spacing": 7
     },
-    "bluetooth": {
-      "format": "󰂯",
-      "format-connected": "󰂯",
-      "format-disabled": "",
-      "on-click": "blueberry",
-      "tooltip": true,
-      "tooltip-format": "󰂯 {device_alias}",
-      "tooltip-format-connected": "{device_enumerate}",
-      "tooltip-format-enumerate-connected": "󰂯 {device_alias} 󰁹{device_battery_percentage}"
-    },
+
     "idle_inhibitor": {
       "format": "{icon}",
       "format-icons": {
-        "activated": "",
-        "deactivated": ""
+        "activated": "",
+        "deactivated": ""
       }
     },
-    "tray": {
-      "spacing": 5
-    },
-    "battery": {
-      "design-capacity": false,
-      "format": "󰁹",
-      // "format-charging": "󱐌",
-      "format-charging": "",
-      "format-full": "󱟢",
-      "format-plugged": "󰂄",
-      "full-at": 100,
-      "states": {
-        "critical": 10,
-        "good": 95,
-        "warning": 30
-      },
-      "tooltip": false
-    },
-    "custom/batt-warn": {
-      "exec": "~/.config/waybar/scripts/batt-warn.sh",
-      "interval": 3
-    },
-    "custom/wfrecorder": {
-      "format": "",
-      "exec": "pgrep wf-recorder && echo 'on' || echo ''",
-      "interval": 2,
-      "return-type": "text",
-      "on-click": "~/.config/fuzzel/scripts/record.sh"
-    },
-    "exclusive": true,
-    "fixed-center": true,
-    "gtk-layer-shell": true,
-    "ipc": true,
-    "layer": "top",
-    "margin-bottom": 5,
-    "margin-left": 4,
-    "margin-right": 0,
-    "margin-top": 5,
-    "width": 15,
-    "passthrough": false,
-    "position": "left",
-    "spacing": 3,
+
     "modules-left": [
-      "custom/menu",
       "cpu",
       "memory",
       "temperature",
       "disk",
-      "clock",
-      "custom/wfrecorder",
-      "privacy"
+      "clock#time",
+      "clock#date",
+      "idle_inhibitor"
     ],
     "modules-center": [
-      "niri/workspaces",
-      "hyprland/workspaces"
+      "niri/workspaces"
     ],
     "modules-right": [
-      "custom/swaync",
-      "bluetooth",
-      "idle_inhibitor",
-      "tray",
-      "battery",
-      "custom/batt-warn"
+      "privacy",
+      "network",
+      "tray"
     ]
   }
 ]

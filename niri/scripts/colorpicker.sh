@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 OPTIONS="hex\nrgb\nhsl\nhsv\ncmyk"
-PROMPT="  "
+PROMPT="> "
 CHOICE=$(echo -e "$OPTIONS" | fuzzel --dmenu -p "$PROMPT" --placeholder "choose a format")
 
 case "$CHOICE" in
