@@ -15,15 +15,15 @@
 	insteadOf = gh/
 
 [init]
-	defaultBranch = develop
+	defaultBranch = main
 
 [status]
 	branch = true
 	stash = true
 	showUntrackedFiles = all
 
-[pager]
-	diff = diff-so-fancy | $PAGER
+; [pager]
+; 	diff = diff-so-fancy | $PAGER
 
 [push]
   autoSetupRemote = true
