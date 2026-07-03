@@ -82,7 +82,7 @@
     },
     "network": {
         "format-wifi": "<span foreground='#cba6f7'>{ifname}: </span>{ipaddr}<span foreground='#cba6f7'>/</span>{cidr} <span foreground='#cba6f7'>↑</span>{bandwidthUpBits} <span foreground='#cba6f7'>↓</span>{bandwidthDownBits}",
-        "format-etherner": "<span foreground='#cba6f7'>{ifname}: </span>{ipaddr}<span foreground='#cba6f7'>/</span>{cidr} <span foreground='#cba6f7'>↑</span>{bandwidthUpBits} <span foreground='#cba6f7'>↓</span>{bandwidthDownBits}",
+        "format-ethernet": "<span foreground='#cba6f7'>{ifname}: </span>{ipaddr}<span foreground='#cba6f7'>/</span>{cidr} <span foreground='#cba6f7'>↑</span>{bandwidthUpBits} <span foreground='#cba6f7'>↓</span>{bandwidthDownBits}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "",
         "family": "ipv4"
