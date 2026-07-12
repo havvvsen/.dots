@@ -7,6 +7,7 @@
     "spacing": 6,
     "cpu": {
       "format": "<span foreground='#cba6f7'>Cpu:</span> {usage}",
+
       "format-alt-click": "click",
       "interval": 1,
       "min-length": 5
@@ -44,15 +45,7 @@
         "on-click": "gnome-calendar",
 	"tooltip": false
     },
-    "custom/weather": {
-        "exec": "curl 'https://wttr.in/?format=1'",
-        "interval": 3600
-    },
-    "custom/dnd": {
-	"exec": "makoctl mode",
-	"format": "{}",
-        "interval": 10
-    },
+
     "privacy" : {
       "icon-spacing": 12,
       "icon-size": 13,
@@ -109,6 +102,7 @@
       "clock#time",
       "clock#date",
       "idle_inhibitor"
+
     ],
     "modules-center": [
       "niri/workspaces"
@@ -116,6 +110,7 @@
     "modules-right": [
       "privacy",
       "network",
+      "custom/swaync",
       "tray"
     ]
   }

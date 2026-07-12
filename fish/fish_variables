@@ -1,0 +1,4 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR __fish_initialized:4300
+SETUVAR fish_user_paths:/home/eve/Android/Sdk/platform\x2dtools\x1e/home/eve/Android/Sdk/cmdline\x2dtools/latest/bin\x1e/home/eve/\x2elocal/bin\x1e/home/eve/\x2esdkman\x1e/home/eve/go/bin\x1e/home/eve/\x2epnpm\x1e/home/eve/\x2espicetify
