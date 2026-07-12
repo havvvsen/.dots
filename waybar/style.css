@@ -1,39 +1,43 @@
-@define-color bg #282828;
-@define-color bg0_h #1d2021;
-@define-color bg0_s #32302f;
-@define-color bg0 #282828;
-@define-color bg1 #3c3836;
-@define-color bg2 #504945;
-@define-color bg3 #665c54;
-@define-color bg4 #7c6f64;
+@define-color main_accent #cba6f7;
+@define-color secondary_accent #89b4fa;
 
-@define-color fg #ebdbb2;
-@define-color fg0 #fbf1c7;
-@define-color fg1 #ebdbb2;
-@define-color fg2 #d5c4a1;
-@define-color fg3 #bdae93;
-@define-color fg4 #a89984;
-
-@define-color red #cc241d;
-@define-color green #98971a;
-@define-color yellow #d78821;
-@define-color blue #458588;
-@define-color purple #b16286;
-@define-color aqua #689d6a;
-@define-color orange #d65d0e;
-@define-color gray #a89984;
-
+@define-color rosewater #f5e0dc;
+@define-color flamingo #f2cdcd;
+@define-color pink #f5c2e7;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color text #cdd6f4;
+@define-color subtext1 #bac2de;
+@define-color subtext0 #a6adc8;
+@define-color overlay2 #9399b2;
+@define-color overlay1 #7f849c;
+@define-color overlay0 #6c7086;
+@define-color surface2 #585b70;
+@define-color surface1 #45475a;
+@define-color surface0 #313244;
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
 
 * {
-    font-family: "Iosevka NFP";
-    font-size: 15px;
+  font-family: "Iosevka NFP";
+  font-size: 16px;
 }
 
 window#waybar {
-  background: @bg0_h;
+  background: @crust;
   border-radius: 0px;
   margin: 1px 0px 0px 0px;
-  border: 1px solid @bg
+  border: 1px solid @surface0;
 }
 
 #cpu {
@@ -45,15 +49,20 @@ window#waybar {
 #temperature,
 #disk,
 #clock {
-  color: @fg;
+  color: @text;
 }
 
 #temperature.critical {
- background-color: @red;
+  background-color: @red;
 }
 
-#clock {
-  color: @fg;
+#clock.time {
+  color: @text;
+  margin-left: 20px;
+}
+
+#clock.date {
+  margin-left: 5px;
 }
 
 #privacy-item.screenshare {
@@ -67,16 +76,16 @@ window#waybar {
 }
 
 #workspaces button {
-  color: @fg4;
+  color: @surface1;
   padding: 0px;
 }
 
 #workspaces button.empty {
-  color: @fg4;
+  color: @surface1;
 }
 
 #workspaces button.active {
-  color: @fg;
+  color: @text;
 }
 
 #workspaces button.urgent {
@@ -84,41 +93,22 @@ window#waybar {
 }
 
 #network {
-  color: @fg;
+  color: @text;
 }
 
 #idle_inhibitor {
   margin-right: 8px;
-  color: @gray;
+  color: @surface1;
 }
 
 #idle_inhibitor.activated {
-  color: @fg;
+  color: @text;
 }
 
-#custom-swaync {
-  color: @gray;
-}
-
-
-#custom-swaync,
-#custom-swaync.dnd-none,
-#custom-swaync.dnd-inhibited-none {
-  font-size: 14px;
-  color: @fg2;
-}
-
-#custom-swaync.notification {
-  color: @fg;
-}
-
-#custom-swaync.inhibited-notification,
-#custom-swaync.dnd-notification,
-#custom-swaync.dnd-inhibited-notification {
-  color: @fg;
+#custom-dnd {
+  color: @red;
 }
 
 #tray {
-  font-size: 10px;
   margin-right: 8px;
 }

@@ -3,7 +3,7 @@
 pkill fuzzel
 
 BROWSER="/usr/bin/google-chrome-stable"
-PROMPT="󰊭  "
+PROMPT="> "
 PLACEHOLDER="Search Google or type URL"
 DEFAULT_ENGINE="https://www.google.com/search?q="
 

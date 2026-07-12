@@ -6,19 +6,20 @@
     "position": "bottom",
     "spacing": 6,
     "cpu": {
-      "format": "<span foreground='#689d6a'>Cpu:</span> {usage}",
+      "format": "<span foreground='#cba6f7'>Cpu:</span> {usage}",
+
       "format-alt-click": "click",
       "interval": 1,
       "min-length": 5
     },
     "memory": {
-      "format": "<span foreground='#689d6a'>Mem:</span> {percentage}",
+      "format": "<span foreground='#cba6f7'>Mem:</span> {percentage}",
       "interval": 10,
       "tooltip": false
     },
     "temperature": {
       "critical-threshold": 82,
-      "format": "<span foreground='#689d6a'>Temp:</span> {temperatureC}",
+      "format": "<span foreground='#cba6f7'>Temp:</span> {temperatureC}",
       "format-critical": "<span foreground='#f38ba8'>Temp</span> {temperatureC}",
       "hwmon-path": [
         "/sys/class/hwmon/hwmon1/temp1_input",
@@ -28,13 +29,13 @@
       "tooltip": true
     },
     "disk": {
-      "format": "<span foreground='#689d6a'>Disk:</span> {percentage_used}",
+      "format": "<span foreground='#cba6f7'>Disk:</span> {percentage_used}",
       "interval": 30,
       "path": "/",
       "tooltip": false
     },
     "clock#time": {
-      "format": "<span foreground='#689d6a'>T</span> {:%H:%M}",
+      "format": "{:%H:%M}hrs",
       "interval": 1,
       "tooltip": false
     },
@@ -73,8 +74,8 @@
       "format": "{index}"
     },
     "network": {
-        "format-wifi": "<span foreground='#689d6a'>{ifname}: </span>{ipaddr} <span foreground='#689d6a'>↑</span>{bandwidthUpBits} <span foreground='#689d6a'>↓</span>{bandwidthDownBits}",
-        "format-etherner": "<span foreground='#689d6a'>{ifname}: </span>{ipaddr} <span foreground='#689d6a'>↑</span>{bandwidthUpBits} <span foreground='#689d6a'>↓</span>{bandwidthDownBits}",
+        "format-wifi": "<span foreground='#cba6f7'>{ifname}: </span>{ipaddr}<span foreground='#cba6f7'>/</span>{cidr} <span foreground='#cba6f7'>↑</span>{bandwidthUpBits} <span foreground='#cba6f7'>↓</span>{bandwidthDownBits}",
+        "format-ethernet": "<span foreground='#cba6f7'>{ifname}: </span>{ipaddr}<span foreground='#cba6f7'>/</span>{cidr} <span foreground='#cba6f7'>↑</span>{bandwidthUpBits} <span foreground='#cba6f7'>↓</span>{bandwidthDownBits}",
         "format-linked": "{ifname} (No IP)",
         "format-disconnected": "",
         "family": "ipv4"
@@ -93,26 +94,6 @@
       }
     },
 
-    "custom/swaync": {
-      "escape": true,
-      "exec": "swaync-client -swb",
-      "exec-if": "which swaync-client",
-      "format": "{icon}",
-      "format-icons": {
-        "dnd-inhibited-none": "",
-        "dnd-inhibited-notification": "",
-        "dnd-none": "",
-        "dnd-notification": "",
-        "inhibited-none": "",
-        "inhibited-notification": "",
-        "none": "",
-        "notification": ""
-      },
-      "on-click": "sleep 0.1 && swaync-client -t -sw",
-      "on-click-right": "swaync-client -d -sw",
-      "return-type": "json",
-      "tooltip": false
-    },
     "modules-left": [
       "cpu",
       "memory",

@@ -5,7 +5,7 @@
     },
   },
   "project_panel": {
-    "dock": "right",
+    "dock": "left",
     "default_width": 300,
   },
   "agent": {
@@ -21,14 +21,23 @@
   "edit_predictions": {
     "provider": "none",
   },
-  "icon_theme": "Catppuccin Mocha",
+  "icon_theme": {
+    "mode": "light",
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha",
+  },
   "experimental.theme_overrides": {
     "background.appearance": "blurred",
   },
   "vim_mode": true,
   "relative_line_numbers": "enabled",
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
+  "ui_font_size": 16.5,
+  "buffer_font_size": 17,
+  "buffer_font_weight": 350,
+  "auto_update": false,
+  "auto_update_extensions": {},
+  "cli_default_open_behavior": "new_window",
+  "close_panel_on_toggle": true,
   "theme": {
     "mode": "dark",
     "light": "Catppuccin Mocha",
@@ -36,18 +45,19 @@
   },
   "autosave": "off",
   "format_on_save": "on",
-  "buffer_font_family": "VictorMono Nerd Font",
+  // "buffer_font_family": "VictorMono NFM",
+  "buffer_font_family": "Iosevka Nerd Font Mono",
   "buffer_font_features": {
     "calt": true,
   },
   "toolbar": {
     "breadcrumbs": true,
   },
-  "hide_mouse": "on_typing_and_movement",
+  "hide_mouse": "on_typing_and_action",
   "cursor_blink": false,
   // show types
   "inlay_hints": {
-    "enabled": true,
+    "enabled": false,
   },
   "telemetry": {
     "metrics": false,
@@ -69,30 +79,114 @@
       },
     },
     "Python": {
-      "language_servers": ["ty", "ruff"],
-    },
-    "Zig": {
-      "language_servers": ["zls"],
-      "colorize_brackets": true
+      "language_servers": [
+        "ty",
+        "ruff",
+        "!basedpyright",
+        "!pylsp",
+        "!pyright",
+        "...",
+      ],
     },
   },
   "lsp": {
-    "zls": {
+    "clangd": {
       "binary": {
-        "path": "/usr/local/bin/zls",
+        "path": "/usr/bin/clangd",
         "arguments": [],
+      },
+    },
+    "gopls": {
+      "binary": {
+        "path": "/usr/bin/gopls",
+        "arguments": [],
+      },
+    },
+    "rust-analyzer": {
+      "binary": {
+        "path": "/usr/lib/rustup/bin/rust-analyzer",
+        "arguments": [],
+      },
+    },
+    "svelte-language-server": {
+      "binary": {
+        "path": "/usr/bin/svelteserver",
+        "arguments": ["--stdio"],
+      },
+    },
+    "tailwindcss-language-server": {
+      "binary": {
+        "path": "/usr/bin/tailwindcss-language-server",
+        "arguments": ["--stdio"],
+      },
+    },
+    "vtsls": {
+      "binary": {
+        "path": "~/.pnpm/bin/vtsls",
+        "arguments": ["--stdio"],
+      },
+    },
+    "eslint": {
+      "binary": {
+        "path": "/usr/bin/eslint-language-server",
+        "arguments": ["--stdio"],
+      },
+    },
+    "emmet-language-server": {
+      "binary": {
+        "path": "~/.pnpm/bin/emmet-language-server",
+        "arguments": ["--stdio"],
+      },
+    },
+    "docker-language-server": {
+      "binary": {
+        "path": "/usr/bin/bash-language-server",
+        "arguments": ["start", "--stdio"],
+      },
+    },
+    "bash-language-server": {
+      "binary": {
+        "path": "/usr/bin/bash-language-server",
+        "arguments": ["--stdio"],
+      },
+    },
+    "yaml-language-server": {
+      "binary": {
+        "path": "~/.pnpm/bin/yaml-language-server",
+        "arguments": ["--stdio"],
+      },
+    },
+    "json-language-server": {
+      "binary": {
+        "path": "~/.pnpm/bin/vscode-json-languageserver",
+        "arguments": ["--stdio"],
+      },
+    },
+    "buf": {
+      "binary": {
+        "path": "/usr/bin/buf",
+        "arguments": ["lsp", "serve"],
+      },
+    },
+    "discord_presence": {
+      "binary": {
+        "path": "/usr/local/bin/discord-presence-lsp",
+        "arguments": ["--stdio"],
       },
     },
   },
   "auto_install_extensions": {
     "discord-presence": false,
-    "wakatime": true,
+    "wakatime": false,
     "catppuccin": true,
     "catppuccin-icons": true,
     "dockerfile": true,
     "html": true,
     "emmet": true,
-    "make": false,
+    "make": true,
+    "svelte": false,
+    "yaml": true,
+    "buf": true,
   },
   "terminal": {
     "alternate_scroll": "off",
@@ -100,8 +194,8 @@
     "copy_on_select": false,
     "keep_selection_on_copy": false,
     "dock": "bottom",
-    "default_width": 640,
-    "default_height": 600,
+    // "default_width": 100,
+    "default_height": 700,
     "detect_venv": {
       "on": {
         "directories": [".env", "env", ".venv", "venv"],
@@ -109,14 +203,18 @@
       },
     },
     "env": {},
-    "font_family": null,
-    "font_features": null,
-    "font_size": null,
+    "font_family": "Iosevka Nerd Font Mono",
+    "font_features": {
+      "calt": true,
+    },
+    "font_size": 17,
     "line_height": "comfortable",
     "minimum_contrast": 45,
     "option_as_meta": false,
     "button": true,
-    "shell": "system",
+    "shell": {
+      "program": "/usr/bin/tmux",
+    },
     "toolbar": {
       "breadcrumbs": false,
     },

@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
-OPTIONS="adb connect\ncolor picker\nscreen record\nscreenshot\neasyeffects bypass\nqr code\nwlsunset"
+OPTIONS="dnd\nwlsunset\ncolor picker\nscreen record\nscreenshot\neasyeffects bypass\nqr code\nadb connect"
 CHOICE=$(echo -e "$OPTIONS" | fuzzel --dmenu -p "> " --placeholder "choose an action" --lines 7)
 
 case "$CHOICE" in
-"adb connect")
-	~/.config/niri/scripts/adb.sh
+"dnd")
+	~/.config/niri/scripts/dnd.sh
+	;;
+"wlsunset")
+	~/.config/niri/scripts/wlsunset.sh
 	;;
 "color picker")
 	~/.config/niri/scripts/colorpicker.sh
@@ -26,7 +29,7 @@ case "$CHOICE" in
 "qr code")
 	~/.config/swaync/scripts/qr.sh
 	;;
-"wlsunset")
-	~/.config/niri/scripts/wlsunset.sh
+"adb connect")
+	~/.config/niri/scripts/adb.sh
 	;;
 esac

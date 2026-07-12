@@ -3,7 +3,7 @@
 pkill fuzzel
 
 OPTIONS="Lock\nSuspend\nHibernate\nReboot\nShutdown\nLogout"
-PROMPT="  "
+PROMPT="> "
 PLACEHOLDER="Choose an option"
 
 CHOICE=$(echo -e "$OPTIONS" | fuzzel --dmenu -p "$PROMPT" --placeholder="$PLACEHOLDER")
