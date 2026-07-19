@@ -2,14 +2,8 @@
 	name = Hansen
 	email = samhansen.dev@gmail.com
 
-[core]
-	compression = 9
-	# prevents committing whitespaces
-	whitespace = error
-	preloadindex = true
-
-[url "git@github.com:sammhansen/"]
-	insteadOf = sh/
+[url "git@github.com:havvvsen/"]
+	insteadOf = ghv/
 
 [url "https://github.com/"]
 	insteadOf = gh/
@@ -18,27 +12,4 @@
 	defaultBranch = main
 
 [status]
-	branch = true
-	stash = true
 	showUntrackedFiles = all
-
-; [pager]
-; 	diff = diff-so-fancy | $PAGER
-
-[push]
-  autoSetupRemote = true
-  default = current
-
-[pull]
-  default = current
-  rebase = true
-
-[rebase]
-  autoStash = true
-  missingCommitsCheck = true
-
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
