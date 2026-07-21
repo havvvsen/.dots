@@ -1,5 +1,7 @@
 # eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
+function fish_mode_prompt; end
+
 function fish_prompt -d "Write out the prompt"
     # This shows up as USER@HOST /home/user/ >, with the directory colored
     # $USER and $hostname are set by fish, so you can just use them
@@ -17,6 +19,7 @@ fish_vi_key_bindings
 
 # starship init fish | source
 
+alias "src"="source ~/.config/fish/config.fish"
 alias "ls"="eza"
 alias "s"="eza"
 alias "x"="clear"
@@ -61,6 +64,7 @@ export ANDROID_HOME=$HOME/Android/Sdk
 fish_add_path $HOME/.spicetify
 
 fish_add_path $HOME/.pnpm
+fish_add_path $HOME/.pnpm/bin
 fish_add_path $HOME/go/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.bun/bin
@@ -74,3 +78,5 @@ zoxide init fish | source
 direnv hook fish | source
 
 # eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
+
+fish_add_path /home/hansen/.spicetify
