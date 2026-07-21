@@ -204,7 +204,7 @@ window-rule {
     geometry-corner-radius 1
     clip-to-geometry true
     opacity 1.0
-    
+
 }
 
 window-rule {
@@ -224,8 +224,21 @@ window-rule {
 }
 
 binds {
-    Mod+Shift+Slash { show-hotkey-overlay; }
+    Ctrl+E { spawn "wtype" "-k" "Escape"; }
+    Ctrl+B { spawn "wtype" "-k" "g"; }
+    Ctrl+M { spawn "wtype" "-k" "h"; }
+    Ctrl+Shift+M { spawn "wtype" "-k" "H"; }
+    Ctrl+Shift+B { spawn "wtype" "-k" "G"; }
+    Ctrl+Period { spawn "wtype" "-k" "Colon"; }
+    Ctrl+Semicolon { spawn "wtype" "-k" "Apostrophe"; }
+    Ctrl+Shift+Semicolon { spawn "wtype" "-k" "Quotedbl"; }
+    Ctrl+Down { spawn "wtype" "-k" "Up"; }
+    Mod+D { spawn "fuzzel"; }
 
+    // Window keymaps
+    Mod+b     { focus-column-left; }
+
+    Mod+Shift+Slash { show-hotkey-overlay; }
     Super+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Super+B { spawn "google-chrome-stable"; }
     Alt+C { spawn "bash" "-c" "~/.config/niri/scripts/chatgpt.sh"; }
@@ -293,7 +306,7 @@ binds {
     Mod+A     { focus-monitor-left; }
     Mod+S     { focus-monitor-down; }
     Mod+W     { focus-monitor-up; }
-    Mod+D     { focus-monitor-right; }
+    // Mod+D     { focus-monitor-right; }
 
 
     Mod+Alt+W  { move-window-to-monitor-up; }
